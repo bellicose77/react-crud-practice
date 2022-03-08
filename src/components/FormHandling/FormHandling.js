@@ -10,7 +10,14 @@ const FormHandling = () => {
     })
     console.log(user)
     const handleInput=(e)=>{
-       console.log(e.target.value)
+       let userInputValue=e.target.value;
+       setUser(
+           {
+
+           
+           ...user ,
+           [e.target.name]:userInputValue}
+           )
     }
     return (
         <>
@@ -19,7 +26,7 @@ const FormHandling = () => {
                <input
                name='fname'
                type='text'
-
+               value={user.name}
                onChange={(e)=>handleInput(e)}
                >
                    
@@ -29,7 +36,7 @@ const FormHandling = () => {
                <input
                name='lname'
                type='text'
-
+               value={user.lname}
                onChange={(e)=>handleInput(e)}
                />
                       
@@ -38,7 +45,7 @@ const FormHandling = () => {
                <input
                name='email'
                type='email'
-
+               value={user.email}
                onChange={(e)=>handleInput(e)}
                />
                       <br/>
@@ -47,7 +54,7 @@ const FormHandling = () => {
                <input
                name='password'
                type='password'
-
+               value={user.password}
                onChange={(e)=>handleInput(e)}
                >
                </input>
