@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 
 const FormHandling = () => {
+    const [user,setUser]=useState({
+        fname:'',
+        lname:'',
+        email:'',
+        password:''
+    })
+    console.log(user)
     const handleInput=(e)=>{
        console.log(e.target.value)
     }
